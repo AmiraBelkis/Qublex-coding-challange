@@ -1,7 +1,6 @@
 package com.qublex.Challenge.ServiceTest;
 
 import com.qublex.Challenge.Entity.Bundle;
-import com.qublex.Challenge.Entity.BundleItem;
 import com.qublex.Challenge.Entity.InventoryItem;
 import com.qublex.Challenge.Entity.TreeNode;
 import com.qublex.Challenge.Service.BundleService;
@@ -73,7 +72,7 @@ public class BundleServiceTest {
     void calculateMaxBundleNumberTest(String description, String bundleDesignation, String dataDirectory, String expectedResult) throws Exception {
         log.info(description);
         ArrayList<InventoryItem> inventory = readInventoryItemList(dataDirectory + "Inventory.json");
-        TreeNode<BundleItem> bundleItemsTree = readBundleTree(dataDirectory + "BundleTree.json");
+        TreeNode bundleItemsTree = readBundleTree(dataDirectory + "BundleTree.json");
         Bundle bundle = new Bundle(bundleDesignation);
         bundle.setRoot(bundleItemsTree);
         int results = bundleService.calculateMaxBundleNumber(bundle, inventory);

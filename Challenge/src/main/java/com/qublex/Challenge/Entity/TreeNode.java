@@ -1,27 +1,40 @@
 package com.qublex.Challenge.Entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
+@Entity
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class TreeNode<T> {
-    T data;
-    List<TreeNode<T>> children;
+public class TreeNode {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long treeNodeId;
 
-    public TreeNode(T data) {
+    @ManyToOne
+    @JoinColumn(name = "bundle_item_id")
+    private BundleItem data;
+
+    @OneToMany
+    @JoinTable(
+            name = "node_children",
+            joinColumns = @JoinColumn(name = "parent_id"),
+            inverseJoinColumns = @JoinColumn(name = "child_id")
+    )
+    private List<TreeNode> children;
+
+    public TreeNode(BundleItem data) {
         this.data = data;
         this.children = new ArrayList<>();
     }
 
-    public void addChild(TreeNode<T> child) {
+    public void addChild(TreeNode child) {
         this.children.add(child);
     }
 }
