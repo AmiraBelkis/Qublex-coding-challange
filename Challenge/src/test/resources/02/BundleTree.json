@@ -1,0 +1,73 @@
+{
+  "data": {
+    "designation": "Laptop",
+    "itemNumber": 1
+  },
+  "children": [
+    {
+      "data": {
+        "designation": "Processor",
+        "itemNumber": 1
+      },
+      "children": []
+    },
+    {
+      "data": {
+        "designation": "Motherboard",
+        "itemNumber": 1
+      },
+      "children": [
+        {
+          "data": {
+            "designation": "RAM",
+            "itemNumber": 1
+          },
+          "children": []
+        },
+        {
+          "data": {
+            "designation": "Storage Drive",
+            "itemNumber": 1
+          },
+          "children": []
+        },
+        {
+          "data": {
+            "designation": "Graphics Card",
+            "itemNumber": 1
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "data": {
+        "designation": "Screen",
+        "itemNumber": 1
+      },
+      "children": [
+        {
+          "data": {
+            "designation": "Display Panel",
+            "itemNumber": 1
+          },
+          "children": []
+        },
+        {
+          "data": {
+            "designation": "Bezel",
+            "itemNumber": 1
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "data": {
+        "designation": "Battery",
+        "itemNumber": 1
+      },
+      "children": []
+    }
+  ]
+}

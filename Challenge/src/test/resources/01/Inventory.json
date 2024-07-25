@@ -1,0 +1,18 @@
+[
+  {
+    "designation": "Seat",
+    "stockUnits": 50
+  },
+  {
+    "designation": "Pedal",
+    "stockUnits": 60
+  },
+  {
+    "designation": "Frame",
+    "stockUnits": 60
+  },
+  {
+    "designation": "Tube",
+    "stockUnits": 35
+  }
+]

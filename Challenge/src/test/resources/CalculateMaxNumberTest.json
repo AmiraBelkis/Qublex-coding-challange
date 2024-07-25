@@ -1,0 +1,14 @@
+{
+  "TestCase01": {
+    "description": "The bundle in this case is a bike made of 1 seat, 2 pedals, 2 wheels which are formed of 1 frame and 1 tube",
+    "bundleDesignation": "Bike",
+    "dataDirectory": "01/",
+    "expectedResult": "17"
+  },
+  "TestCase02": {
+    "description": "The bundle in this case is a Laptop made of 1 Processor, 1 Motherboard made of 1 RAM module, 1 Storage Drive, and 1 Graphics Card), 1 Screen made of 1 Display Panel and 1 Bezel), and 1 Battery.",
+    "bundleDesignation": "Laptop",
+    "dataDirectory": "02/",
+    "expectedResult": "70"
+  }
+}

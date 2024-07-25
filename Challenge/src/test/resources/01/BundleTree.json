@@ -1,0 +1,44 @@
+{
+  "data": {
+    "designation": "bike",
+    "itemNumber": 1
+  },
+  "children": [
+    {
+      "data": {
+        "designation": "Seat",
+        "itemNumber": 1
+      },
+      "children": []
+    },
+    {
+      "data": {
+        "designation": "Pedal",
+        "itemNumber": 2
+      },
+      "children": []
+    },
+    {
+      "data": {
+        "designation": "Wheel",
+        "itemNumber": 2
+      },
+      "children": [
+        {
+          "data": {
+            "designation": "Frame",
+            "itemNumber": 1
+          },
+          "children": []
+        },
+        {
+          "data": {
+            "designation": "Tube",
+            "itemNumber": 1
+          },
+          "children": []
+        }
+      ]
+    }
+  ]
+}

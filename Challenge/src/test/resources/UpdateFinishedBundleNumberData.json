@@ -1,0 +1,23 @@
+{
+  "TestCase01": {
+    "Description": "Test case : Setting the number of bundles for the 1st time",
+    "stock": 5,
+    "sparePartsNumber": 2,
+    "previousFinishedBundlesNumber": -1,
+    "expectedFinishedBundlesNumber": 2
+  },
+  "TestCase02": {
+    "Description": "Test case : Update the number of bundles  with the new case data",
+    "stock": 5,
+    "sparePartsNumber": 2,
+    "previousFinishedBundlesNumber": 4,
+    "expectedFinishedBundlesNumber": 2
+  },
+  "TestCase03": {
+    "Description": "Test case : Keep the same previous number of bundles",
+    "stock": 5,
+    "sparePartsNumber": 1,
+    "previousFinishedBundlesNumber": 3,
+    "expectedFinishedBundlesNumber": 3
+  }
+}

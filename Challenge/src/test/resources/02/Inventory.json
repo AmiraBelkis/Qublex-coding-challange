@@ -1,0 +1,30 @@
+[
+  {
+    "designation": "Processor",
+    "stockUnits": 150
+  },
+  {
+    "designation": "RAM",
+    "stockUnits": 160
+  },
+  {
+    "designation": "Storage Drive",
+    "stockUnits": 80
+  },
+  {
+    "designation": "Graphics Card",
+    "stockUnits": 95
+  },
+  {
+    "designation": "Display Panel",
+    "stockUnits": 170
+  },
+  {
+    "designation": "Bezel",
+    "stockUnits": 340
+  },
+  {
+    "designation": "Battery",
+    "stockUnits": 70
+  }
+]
