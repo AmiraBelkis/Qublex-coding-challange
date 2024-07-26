@@ -1,8 +1,5 @@
 package com.qublex.Challenge.ServiceTest;
 
-import com.qublex.Challenge.Entity.Bundle;
-import com.qublex.Challenge.Entity.InventoryItem;
-import com.qublex.Challenge.Entity.TreeNode;
 import com.qublex.Challenge.Service.BundleService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -12,13 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
 import static com.qublex.Challenge.Service.BundleServiceImpl.updateFinishedBundlesNumber;
-import static com.qublex.Challenge.Utils.*;
+import static com.qublex.Challenge.Utils.readItemList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Slf4j
@@ -49,7 +45,6 @@ public class BundleServiceTest {
             return Arguments.of(
                     testCaseMap.get("description"),
                     testCaseMap.get("bundleDesignation"),
-                    testCaseMap.get("dataDirectory"),
                     testCaseMap.get("expectedResult")
             );
 
@@ -69,13 +64,9 @@ public class BundleServiceTest {
 
     @ParameterizedTest
     @MethodSource("BundleTreeData")
-    void calculateMaxBundleNumberTest(String description, String bundleDesignation, String dataDirectory, String expectedResult) throws Exception {
+    void calculateMaxBundleNumberTest(String description, String bundleDesignation, String expectedResult) throws Exception {
         log.info(description);
-        ArrayList<InventoryItem> inventory = readInventoryItemList(dataDirectory + "Inventory.json");
-        TreeNode bundleItemsTree = readBundleTree(dataDirectory + "BundleTree.json");
-        Bundle bundle = new Bundle(bundleDesignation);
-        bundle.setRoot(bundleItemsTree);
-        int results = bundleService.calculateMaxBundleNumber(bundle, inventory);
+        int results = bundleService.calculateMaxBundleNumber(bundleDesignation);
         assertEquals(expectedResult, String.valueOf(results));
     }
 }

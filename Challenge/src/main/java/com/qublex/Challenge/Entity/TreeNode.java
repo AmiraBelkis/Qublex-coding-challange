@@ -4,12 +4,14 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class TreeNode {
@@ -29,8 +31,8 @@ public class TreeNode {
     )
     private List<TreeNode> children;
 
-    public TreeNode(BundleItem data) {
-        this.data = data;
+    public TreeNode(BundleItem bundleItem) {
+        this.data = bundleItem;
         this.children = new ArrayList<>();
     }
 

@@ -1,0 +1,35 @@
+CREATE TABLE Inventory_Item (
+    INVENTORY_ITEM_ID BIGINT AUTO_INCREMENT PRIMARY KEY,
+    Designation VARCHAR(255),
+    Stock_Units INT
+);
+
+CREATE TABLE Bundle_Item (
+    BUNDLE_ITEM_ID BIGINT AUTO_INCREMENT PRIMARY KEY,
+    Designation VARCHAR(255) NOT NULL,
+    Item_Number INT NOT NULL
+);
+
+CREATE TABLE Tree_Node (
+    Tree_Node_Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    Bundle_Item_Id BIGINT,
+    FOREIGN KEY (Bundle_Item_Id) REFERENCES Bundle_Item(BUNDLE_ITEM_ID)
+);
+
+CREATE TABLE Node_Children (
+    PARENT_ID BIGINT,
+    CHILD_ID BIGINT,
+    PRIMARY KEY (PARENT_ID, CHILD_ID),
+    FOREIGN KEY (PARENT_ID) REFERENCES Tree_Node(Tree_Node_Id),
+    FOREIGN KEY (CHILD_ID) REFERENCES Tree_Node(Tree_Node_Id)
+);
+
+CREATE TABLE Bundle (
+    Bundle_Id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    Designation VARCHAR(255) NOT NULL,
+    Root_Id BIGINT,
+    FOREIGN KEY (Root_Id) REFERENCES Tree_Node(Tree_Node_Id)
+);
+
+
+------
