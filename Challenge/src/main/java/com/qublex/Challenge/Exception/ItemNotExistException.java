@@ -9,7 +9,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-public class ItemNotExistException extends Exception {
+public class ItemNotExistException extends RuntimeException {
     private String message;
     private String wrongDesignation;
 }

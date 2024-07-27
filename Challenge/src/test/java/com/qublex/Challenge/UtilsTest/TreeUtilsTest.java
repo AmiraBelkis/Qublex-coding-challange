@@ -1,6 +1,5 @@
 package com.qublex.Challenge.UtilsTest;
 
-import com.qublex.Challenge.Entity.BundleItem;
 import com.qublex.Challenge.Entity.TreeNode;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class TreeUtilsTest {
     @Test
     void getSparePartsTest() throws Exception {
-        TreeNode<BundleItem> bundleTree = readBundleTree("01/BundleTree.json");
+        TreeNode bundleTree = readBundleTree("01/BundleTree.json");
 
         HashMap<String, Integer> spareParts = getSpareParts(bundleTree);
 

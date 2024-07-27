@@ -2,7 +2,6 @@ package com.qublex.Challenge;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.qublex.Challenge.Entity.BundleItem;
 import com.qublex.Challenge.Entity.InventoryItem;
 import com.qublex.Challenge.Entity.TreeNode;
 import org.springframework.core.io.ClassPathResource;
@@ -27,10 +26,10 @@ public class Utils {
         });
     }
 
-    public static TreeNode<BundleItem> readBundleTree(String filename) throws IOException {
+    public static TreeNode readBundleTree(String filename) throws IOException {
         ClassPathResource resource = new ClassPathResource(filename);
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(resource.getFile(), new TypeReference<TreeNode<BundleItem>>() {
+        return objectMapper.readValue(resource.getFile(), new TypeReference<TreeNode>() {
         });
 
     }

@@ -7,5 +7,7 @@ import java.util.List;
 public interface InventoryService {
     int getInventoryStock(String designation) throws Exception;
 
-    void fillInventoryFrom(List<InventoryItem> inventory);
+    List<InventoryItem> getInventoryItems();
+
+    List<InventoryItem> createInventoryItem(List<InventoryItem> inventoryItems);
 }
